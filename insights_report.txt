@@ -1,0 +1,62 @@
+
+====================================================================
+  EMPLOYEE ATTRITION ANALYSIS — INSIGHTS REPORT
+====================================================================
+
+DATASET SUMMARY
+---------------
+• Total employees analysed : 1,470
+• Employees who left       : 319
+• Overall attrition rate   : 21.7%
+• Highest-risk department  : Sales
+  (21.9% attrition)
+
+TOP ATTRITION DRIVERS (Feature Importance)
+-------------------------------------------
+  1. MonthlyIncome: 0.1076
+  2. YearsAtCompany: 0.0816
+  3. Age: 0.0750
+  4. DistanceFromHome: 0.0728
+  5. PercentSalaryHike: 0.0709
+  6. YearsInCurrentRole: 0.0655
+  7. OverTime: 0.0608
+  8. NumCompaniesWorked: 0.0517
+
+MODEL PERFORMANCE SUMMARY
+--------------------------
+              Model  Accuracy  Precision  Recall    F1  ROC_AUC  CV_Mean
+Logistic Regression     0.609      0.278   0.500 0.358    0.589    0.645
+      Random Forest     0.755      0.167   0.031 0.053    0.531    0.635
+  Gradient Boosting     0.769      0.389   0.109 0.171    0.537    0.590
+
+BEST MODEL : Logistic Regression
+  → Accuracy  : 0.609
+  → Precision : 0.278
+  → Recall    : 0.500
+  → F1 Score  : 0.358
+  → ROC-AUC   : 0.589
+
+EMPLOYEE RISK SEGMENTATION (Test Set: 294 employees)
+--------------------------------------------------------------
+  🔴 High Risk  (>60% prob) : 10 employees
+  🟡 Medium Risk (30–60%)   : 47 employees
+  🟢 Low Risk   (<30%)      : 237 employees
+
+HR RECOMMENDATIONS
+------------------
+1. OVERTIME POLICY     — Employees doing overtime leave at significantly higher
+                         rates. Consider workload redistribution or comp-off policy.
+2. LOW SATISFACTION    — Employees with Job Satisfaction ≤ 2 need immediate
+                         attention. Suggest skip-level meetings and career roadmaps.
+3. INCOME GAPS         — Employees earning < $3,000/month show elevated risk.
+                         Benchmark salaries against market rates.
+4. EARLY TENURE RISK   — Employees with < 2 years at company are vulnerable.
+                         Strengthen onboarding and buddy programs.
+5. SINGLE EMPLOYEES    — Higher attrition among single employees. 
+                         Consider social engagement and community-building programs.
+6. STOCK OPTIONS       — Employees with stock options (level ≥ 2) show lower
+                         attrition. Expand ESOP eligibility.
+7. DISTANCE FROM HOME  — Employees commuting > 20 km show higher risk.
+                         Consider hybrid/remote work policies.
+
+====================================================================
